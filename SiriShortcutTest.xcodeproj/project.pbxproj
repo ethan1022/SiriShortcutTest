@@ -12,6 +12,7 @@
 		AA1B4B162154F83000F1715B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1B4B142154F83000F1715B /* Main.storyboard */; };
 		AA1B4B182154F83300F1715B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1B4B172154F83300F1715B /* Assets.xcassets */; };
 		AA1B4B1B2154F83300F1715B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1B4B192154F83300F1715B /* LaunchScreen.storyboard */; };
+		AA1B4B252154F97900F1715B /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1B4B242154F97900F1715B /* Intents.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		AA1B4B172154F83300F1715B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1B4B1A2154F83300F1715B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1B4B1C2154F83300F1715B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA1B4B222154F94800F1715B /* SiriShortcutTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriShortcutTest.entitlements; sourceTree = "<group>"; };
+		AA1B4B242154F97900F1715B /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1B4B252154F97900F1715B /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				AA1B4B0F2154F83000F1715B /* SiriShortcutTest */,
 				AA1B4B0E2154F83000F1715B /* Products */,
+				AA1B4B232154F97900F1715B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		AA1B4B0F2154F83000F1715B /* SiriShortcutTest */ = {
 			isa = PBXGroup;
 			children = (
+				AA1B4B222154F94800F1715B /* SiriShortcutTest.entitlements */,
 				AA1B4B102154F83000F1715B /* AppDelegate.swift */,
 				AA1B4B122154F83000F1715B /* ViewController.swift */,
 				AA1B4B142154F83000F1715B /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				AA1B4B1C2154F83300F1715B /* Info.plist */,
 			);
 			path = SiriShortcutTest;
+			sourceTree = "<group>";
+		};
+		AA1B4B232154F97900F1715B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA1B4B242154F97900F1715B /* Intents.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +110,11 @@
 				TargetAttributes = {
 					AA1B4B0C2154F83000F1715B = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -282,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SiriShortcutTest/SiriShortcutTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87N724V2PB;
 				INFOPLIST_FILE = SiriShortcutTest/Info.plist;
@@ -300,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SiriShortcutTest/SiriShortcutTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87N724V2PB;
 				INFOPLIST_FILE = SiriShortcutTest/Info.plist;
